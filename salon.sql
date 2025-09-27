@@ -49,9 +49,9 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.appointments (
     appointment_id integer NOT NULL,
-    customer_id integer NOT NULL,
-    service_id integer NOT NULL,
-    "time" character varying(50) NOT NULL
+    customer_id integer,
+    service_id integer,
+    "time" character varying(10)
 );
 
 
@@ -85,8 +85,8 @@ ALTER SEQUENCE public.appointments_appointment_id_seq OWNED BY public.appointmen
 
 CREATE TABLE public.customers (
     customer_id integer NOT NULL,
-    name character varying(50) NOT NULL,
-    phone character varying(50) NOT NULL
+    phone character varying(10),
+    name character varying(20)
 );
 
 
@@ -120,7 +120,7 @@ ALTER SEQUENCE public.customers_customer_id_seq OWNED BY public.customers.custom
 
 CREATE TABLE public.services (
     service_id integer NOT NULL,
-    name character varying(50) NOT NULL
+    name character varying(10)
 );
 
 
